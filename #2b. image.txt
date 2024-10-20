@@ -1,0 +1,32 @@
+#2b. image
+
+import pygame
+
+pygame.init()
+white = (255, 255, 255)
+
+# Assigning values to height and width variable
+height = 800
+width = 800
+
+# Creating the display surface object of specific dimension
+display_surface = pygame.display.set_mode((width, height))
+
+# Set the Pygame window name
+pygame.display.set_caption('Image')
+
+# Creating a surface object, image is drawn on it
+image = pygame.image.load('C:/Users/rudra/OneDrive/Pictures/splash_l.jpg')
+
+# Infinite loop
+while True:
+    display_surface.fill(white)
+    display_surface.blit(image, (0, 0))
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()  # Quit the program
+            quit()
+
+    # Draws the surface object to the screen
+    pygame.display.update()
